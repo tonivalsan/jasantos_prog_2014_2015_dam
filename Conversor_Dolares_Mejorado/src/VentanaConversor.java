@@ -78,18 +78,20 @@ public class VentanaConversor extends JFrame {
 		comboBox.setBounds(21, 133, 150, 20);
 		contentPane.add(comboBox);
 		
+		//Se establecen los diferentes tipos de monedas
 		String monedas[]=new String[4];
 		monedas[0]="Dólares";
 		monedas[1]="Libras";
 		monedas[2]="Euros";
 		monedas[3]="Yen";
 		
+		//se muestran en el desplegable las monedas definidas anteriormente
 		comboBox.addItem(monedas[0]);
 		comboBox.addItem(monedas[1]);
 		comboBox.addItem(monedas[2]);
 		comboBox.addItem(monedas[3]);
 		
-
+		//Aquí está el evento cuando se selecciona un item del desplegable
 		comboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
 				switch((String)comboBox.getSelectedItem()){
@@ -127,8 +129,6 @@ public class VentanaConversor extends JFrame {
 				try{
 					euros=Float.parseFloat(cajaEuros.getText());					
 					cajaDolares.setText(String.valueOf(euros*3));
-					
-					
 					
 					if(euros>0 && euros<=500){
 						cajaMensaje.setText("TODO OK");	
